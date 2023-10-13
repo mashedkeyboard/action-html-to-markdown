@@ -1,15 +1,16 @@
 import * as Core from '@actions/core'
 import TurndownService from 'turndown'
-import { gfm } from 'turndown-plugin-gfm'
 
 const htmlText = Core.getInput('html-text')
 
 Core.info('Input HTML Text: ' + htmlText)
 
+// Don't escape markdown: I want to write in it.
+TurndownService.prototype.escape = (x) => x;
+
 const markdownText = new TurndownService({
   headingStyle: 'atx',
 })
-  .use(gfm)
   .turndown(htmlText)
 
 Core.setOutput('markdown-text', markdownText)
