@@ -1,6 +1,6 @@
 name: 'Convert HTML text to Markdown text'
-description: 'Convert HTML text to Markdown text using turndown'
-author: 'Hiroki Oi'
+description: 'Convert HTML text to Markdown text using turndown, with customisations for Curtis\' blog'
+author: 'Hiroki Oi and Curtis Parfitt-Ford'
 branding:
   icon: file-text
   color: blue
@@ -12,5 +12,5 @@ outputs:
   text:
     description: 'Markdown text output'
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'

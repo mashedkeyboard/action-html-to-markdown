@@ -6,12 +6,15 @@ const htmlText = Core.getInput('html-text')
 Core.info('Input HTML Text: ' + htmlText)
 
 // Don't escape markdown: I want to write in it.
-TurndownService.prototype.escape = (x) => x;
+TurndownService.prototype.escape = (x: any) => x;
 
-const markdownText = new TurndownService({
+const service = new TurndownService({
   headingStyle: 'atx',
-})
-  .turndown(htmlText)
+});
+
+service.remove('h1');
+
+const markdownText = service.turndown(htmlText)
 
 Core.setOutput('markdown-text', markdownText)
 
