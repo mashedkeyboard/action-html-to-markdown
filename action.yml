@@ -1,5 +1,5 @@
 name: 'Convert HTML text to Markdown text'
-description: 'Convert HTML text to Markdown text using turndown, with customisations for Curtis\' blog'
+description: "Convert HTML text to Markdown text using turndown, with customisations for Curtis' blog"
 author: 'Hiroki Oi and Curtis Parfitt-Ford'
 branding:
   icon: file-text
