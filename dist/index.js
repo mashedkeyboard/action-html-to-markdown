@@ -27537,7 +27537,12 @@ turndown_1.default.prototype.escape = (x) => x;
 const service = new turndown_1.default({
     headingStyle: 'atx',
 });
-service.remove('h1');
+service.addRule('removeH1s', {
+    filter: ['h1'],
+    replacement: function (content) {
+        return '';
+    }
+});
 const markdownText = service.turndown(htmlText);
 Core.setOutput('markdown-text', markdownText);
 Core.info('Output Markdown Text: ' + markdownText);
