@@ -12,7 +12,12 @@ const service = new TurndownService({
   headingStyle: 'atx',
 });
 
-service.remove('h1');
+service.addRule('removeH1s', {
+  filter: ['h1'],
+  replacement: function (content) {
+    return ''
+  }
+});
 
 const markdownText = service.turndown(htmlText)
 
