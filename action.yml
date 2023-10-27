@@ -5,7 +5,7 @@ branding:
   icon: file-text
   color: blue
 inputs:
-  text:
+  html-text:
     description: 'HTML text to convert'
     required: true
 outputs:
